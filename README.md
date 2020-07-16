@@ -25,3 +25,37 @@ To install these packages in Python 3, make sure you have installed pip3 and run
 ## Running the script
 
 Make sure you have the script and the input file within the same folder before starting.
+
+### Input file
+
+The script takes as input a tab-separated header-less file containing, for each line, the name of each factors and of its levels.
+
+For instance, if you want to run a 2x2 experiment having telicity (levels = telic, atelic) and perfectivity (levels = perf, imperf) as factors, you would input:
+
+| | | |
+|-|-|-|
+| telicity | telic | atelic
+| perfectivity | perf | imperf
+
+### Parameters
+
+You may pass several optional parameters to the script:
+
+    --factors, -f:       file containing your factors and levels of interest (defaults to input_factors.csv)
+    --participants, -p:  number of participants to the experiment (defaults to 25)
+    --output, -o:        output file with mock judgments (defaults to mock_judgments.csv)
+    
+To access the list of parameters in your terminal, run:    
+    
+    python3 giuliaJudgs.py -h
+
+## How does it work?
+
+It's easier done than said. First of all, it computes your factorial design (a.k.a. Cartesian product) using the awesome [DOEpy package](https://doepy.readthedocs.io/en/latest/) by Dr. Tirthajyoti Sarkar. Beware: it converts strings to numbers, so given the input provided before, you would get:
+
+telicity | perfectivity
+|-|-|
+1 | 0
+0 | 0
+1 | 1
+0 | 1
