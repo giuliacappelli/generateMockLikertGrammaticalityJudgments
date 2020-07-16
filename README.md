@@ -81,3 +81,11 @@ telicity | perfectivity | prtp1 | prtp2 | prtp3
 Now we add some noise in the data, replacing 20% of judgment values with random values within the Likert scale, and save the Pandas DataFrame to a csv file.
 
 Done! May it provide optimal input for all your testing needs :mortar_board:
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+Many thanks to the Stack Overflow community, for the many code snippets that saved me from frustration.
