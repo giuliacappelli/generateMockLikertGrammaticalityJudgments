@@ -59,3 +59,25 @@ telicity | perfectivity
 0 | 0
 1 | 1
 0 | 1
+
+Then, the script creates a column for each participant, forcing them to provide high judgments (only 7s, since I'm using a 7-point Likert scale, or 6s and 7s if you comment a line). Say you have 3 participants:
+
+telicity | perfectivity | prtp1 | prtp2 | prtp3
+|-|-|-|-|-|
+1 | 0 | 6 | 7 | 6
+0 | 0 | 7 | 7 | 6
+1 | 1 | 6 | 6 | 6
+0 | 1 | 6 | 7 | 7
+
+Then, the script updates these judgments based on the levels in your factors. In particular, for each line, it subtracts from each judgment the sum of the level values. It assumes that you want your 0-levels to make the sentences more acceptable than the 1-levels, the 1-levels more acceptable than the 2-levels (if any), and so on. The output will be:
+
+telicity | perfectivity | prtp1 | prtp2 | prtp3
+|-|-|-|-|-|
+1 | 0 | 5 | 6 | 5
+0 | 0 | 7 | 7 | 6
+1 | 1 | 5 | 5 | 5
+0 | 1 | 5 | 6 | 6
+
+Now we add some noise in the data, replacing 30% of judgment values with random values within the Likert scale, and save the Pandas DataFrame to a csv file.
+
+Done! May it provide optimal input for all your testing needs :mortar_board:
