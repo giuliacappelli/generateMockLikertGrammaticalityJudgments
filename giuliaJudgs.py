@@ -60,7 +60,7 @@ for num in list(df_part.index.values): # for each index in the list of df_part r
 
 # replaces a given percentage of df_part values with random values (bounded by df_part values) to add noise in the judgments
 for el in range(n_prtps):
-	df_part["prtp"+str(el+1)] = df_part["prtp"+str(el+1)].sample(frac=0.7) # replace 30% of values in each column with NaNs
+	df_part["prtp"+str(el+1)] = df_part["prtp"+str(el+1)].sample(frac=0.8) # replace 20% of values in each column with NaNs
 	df_part = df_part.apply(lambda x: np.where(x.isnull(), x.dropna().sample(len(x), replace=True), x)) # replace NaNs with values in column
 	df_part = df_part.apply(lambda x: np.where(x<=0, x.dropna().sample(len(x), replace=True), x)) # replace 0s with values in column
 
