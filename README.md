@@ -1,4 +1,4 @@
-# GIULIA: Given Input factors, adjUst LIkert Acceptability judgments based on levels
+# GIULIA: Given Input factors, adjUst LIkert Acceptability judgments based on factor levels
 
 This very simple script may come in handy if you are a linguist and need mock data to test your model on before collecting acceptability judgments from actual people.
 
